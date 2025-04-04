@@ -199,6 +199,7 @@ if (isNaN(age)) {
 }
 */
 
+/*
 const age = parseInt(prompt("How old are you?"));
 
 if (isNaN(age) || age < 0) {
@@ -212,3 +213,10 @@ if (isNaN(age) || age < 0) {
 } else if (age > 80) {
   console.log("You can do whatever you want.");
 }
+*/
+
+const title = document.getElementById("title");
+
+title.innerText = "Got you!";
+
+console.log(title.className);

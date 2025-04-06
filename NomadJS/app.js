@@ -215,8 +215,20 @@ if (isNaN(age) || age < 0) {
 }
 */
 
+/*
 const title = document.getElementById("title");
 
 title.innerText = "Got you!";
 
 console.log(title.className);
+*/
+
+/*
+const hellos = document.getElementsByClassName("hello");
+
+console.log(hellos);
+*/
+
+const title = document.querySelector(".hello h1");
+
+title.innerText = "hello";

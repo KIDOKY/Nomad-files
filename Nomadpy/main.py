@@ -104,7 +104,6 @@ elif winner == 50:
 else:
   print("Else")
 '''
-
 '''
 # And & Or
 age = int(input("how old are you?")
@@ -118,4 +117,65 @@ elif age == 60 or age == 70:
 else:
   print("Go ahead")
 '''
+'''
+# Python Standard Library
+from random import randint
 
+user_choice = int(input("Choose number:"))
+pc_choice = randint(1, 50)
+
+if user_choice == pc_choice:
+  print("You won!")
+elif user_choice > pc_choice:
+  print("Lower! Computer chose", pc_choice)
+elif user_choice < pc_choice:
+  print("Higher! Computer chose", pc_choice)
+'''
+
+'''
+# while
+distance = 0
+
+while distance < 20:
+  print("I'm running:", distance, "km")
+  distance = distance + 1
+'''
+
+'''
+# Methods
+name = "nico"
+
+print(name.endswith("o"))
+'''
+
+'''
+# Lists
+days_of_week = ["Mon", "Tue", "Wed", "Thu", "Fri"]
+
+print(days_of_week[2])
+'''
+
+'''
+# Tuples
+days = ("Mon", "Tue", "Wed")
+
+print(days[0])
+'''
+
+'''
+# Dicts
+player = {
+  "Name": "nico",
+  "Age": 12,
+  "Alive": True,
+  "fav_food": ["🍕", "🍔"]
+}
+player["fav_food"].append("🍜")
+print(player.get("fav_food"))
+print(player["fav_food"])
+'''
+
+numbers = [5,3,1,5,7,3,"True",True, 12]
+
+numbers.append(["🍕", "🍔"])
+print(numbers[-1])

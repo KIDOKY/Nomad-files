@@ -175,7 +175,71 @@ print(player.get("fav_food"))
 print(player["fav_food"])
 '''
 
+'''
 numbers = [5,3,1,5,7,3,"True",True, 12]
 
 numbers.append(["🍕", "🍔"])
 print(numbers[-1])
+
+player = {
+  "Name": "nico",
+  "Age": 12,
+  "Alive": True,
+  "fav_food": ("🍕", "🍔"),
+  "friend": {
+    "name": "lynn",
+    "fav_food": ["🍎"]
+  }
+}
+
+print(player["friend"]["fav_food"])
+
+player["fav_food"] = "🍎"
+player.pop("Alive")
+player['friend']['fav_food'].append('🍌')
+
+print(player)
+'''
+
+'''
+# For Loops
+# URL Formatting
+websites = (
+  "google.com",
+  "airbnb.com",
+  "https://twitter.com",
+  "facebook.com",
+  "https://tiktok.com"
+)
+
+for website in websites:
+  if not website.startswith("https://"):
+    website = f"https://{website}"
+  print(website)
+'''
+
+'''
+# Requests
+# Status Codes
+from requests import get
+
+websites = (
+  "google.com",
+  "airbnb.com",
+  "facebook.com"
+)
+
+results = {}
+
+for website in websites:
+  if not website.startswith("https://"):
+    website = f"https://{website}"
+  response = get(website)
+  if response.status_code == 200:
+    results[website] = "OK"
+  else:
+    results[website] = "FAILED"
+
+print(results)
+'''
+

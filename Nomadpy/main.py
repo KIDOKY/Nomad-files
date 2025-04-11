@@ -243,3 +243,161 @@ for website in websites:
 print(results)
 '''
 
+'''
+# Why We Need OOP
+def create_player_for_team(name, xp, team):
+  pass
+
+def create_player(name, xp, team):
+  return {
+    "name": name,
+    "XP": xp,
+    "team": team,
+  }
+  
+def introduct_player(player):
+  name = player["name"]
+  team = player["team"]
+  print(f"Hello! My name is {name} and I play for {team}")
+  
+nico = create_player("Nico", 1500, "Team X")
+'''
+
+'''
+# Classes
+class Puppy:
+  def __init__(self):
+    self.name = "Ruffus"
+    self.age = 0.1
+    self.breed = "Beagle"
+    
+ruffus = Puppy()
+bibi = Puppy()
+  
+print(ruffus.name,
+      ruffus.age,
+      ruffus.breed
+      )
+'''
+
+'''
+# Methods
+class Puppy:
+  def __init__(self, name, breed):
+    self.name = name
+    self.age = 0.1
+    self.breed = breed
+  
+  def __str__(self):
+    return f"{self.breed} Puppy named {self.name}"
+  
+ruffus = Puppy(
+  name = "Ruffus", 
+  breed = "Beagle",
+  )
+bibi = Puppy(
+  name = "Bibi", 
+  breed = "Dalmatian"
+  )
+
+print(
+  bibi,
+  ruffus,
+)
+'''
+
+'''
+# Inheritance
+class Dog:
+  def __init__(self, name, breed, age):
+    self.name = name
+    self.breed = breed
+    self.age = age
+    
+  def sleep(self):
+    print("zzzzzz......")
+    
+class GuardDog(Dog):
+  def __init__(self, name, breed):
+    super().__init__(
+      name, 
+      breed, 
+      5,
+    )
+    self.aggresive = True
+    
+  def rrrrrr(self):
+    print("stay away!")
+    
+class Puppy(Dog):
+  def __init__(self, name, breed):
+    super().__init__(
+      name, 
+      breed, 
+      0.1,
+    )
+    self.spoiled = True
+    
+  def woof_woof(self):
+    print("Woof Woof!")
+    
+ruffus = Puppy(
+  name = "Ruffus", 
+  breed = "Beagle",
+  )
+bibi = GuardDog(
+  name = "Bibi", 
+  breed = "Dalmatian"
+  )
+
+ruffus.sleep()
+bibi.rrrrrr()
+'''
+
+# Code Challenge
+class Player:
+  def __init__(self, name, team):
+    self.name = name
+    self.xp = 1500
+    self.team = team
+    
+  def introduce(self):
+    print(f"Hello! I'm {self.name} and I play for {self.team}")
+    
+class Team:
+  def __init__(self, team_name):
+    self.team_name = team_name
+    self.players = []
+  
+  def show_players(self):
+    for player in self.players:
+      player.introduce()
+      
+  def add_player(self, name):
+    new_player = Player(name, self.team_name)
+    self.players.append(new_player)
+    
+  def remove_player(self, name):
+    for player in self.players:
+      if player.name == name:
+        self.players.remove(player)
+        print(f"{name}님이 {self.team_name}에서 제외되었습니다.")
+        return
+    print(f"{name}님은 {self.team_name}에 속해있지 않습니다.")
+
+  def show_team_xp(self):
+    total_xp = sum(player.xp for player in self.players)
+    print(f"{self.team_name}은 총 {total_xp}포인트가 있어요.")
+
+team_x = Team("Team X")
+team_x.add_player('hanail')
+
+team_blue = Team("Team Blue")
+team_blue.add_player('hanami')
+
+team_x.show_players()
+team_blue.show_players()
+
+team_x.show_team_xp()
+team_x.remove_player('hanail')
+team_x.remove_player('hanail')

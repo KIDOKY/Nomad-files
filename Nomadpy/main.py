@@ -354,6 +354,7 @@ ruffus.sleep()
 bibi.rrrrrr()
 '''
 
+'''
 # Code Challenge
 class Player:
   def __init__(self, name, team):
@@ -401,3 +402,22 @@ team_blue.show_players()
 team_x.show_team_xp()
 team_x.remove_player('hanail')
 team_x.remove_player('hanail')
+'''
+
+'''
+# BeautifulSoup
+import cloudscraper
+from bs4 import BeautifulSoup
+
+scraper = cloudscraper.create_scraper()
+
+url = "https://weworkremotely.com/categories/remote-full-stack-programming-jobs"
+
+response = scraper.get(url)
+
+soup = BeautifulSoup(response.text, "html.parser")
+
+jobs = soup.find("section", class="jobs").find_all("li")
+
+print(jobs)
+'''

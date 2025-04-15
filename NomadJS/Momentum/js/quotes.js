@@ -1,0 +1,51 @@
+const quotes = [
+  {
+    quote: "훌륭한 일을 하는 유일한 방법은 당신이 하는 일을 사랑하는 것이다.",
+    author: "스티브 잡스",
+  },
+  {
+    quote:
+      "성공이 영원한 것도 아니고, 실패가 치명적인 것도 아니다. 중요한 건 계속해 나가는 용기다.",
+    author: "윈스턴 처칠",
+  },
+  {
+    quote: "쇠가 달궈질 때까지 기다리지 말고, 두드려서 달구어라.",
+    author: "윌리엄 버틀러 예이츠",
+  },
+  {
+    quote: "무언가는 항상 불가능해 보인다. 완성되기 전까지는.",
+    author: "넬슨 만델라",
+  },
+  {
+    quote: "빨리 가고 싶으면 혼자 가고, 멀리 가고 싶으면 함께 가라.",
+    author: "아프리카 속담",
+  },
+  {
+    quote: "스스로 할 수 있다고 믿는다면, 이미 절반은 이룬 것이다.",
+    author: "시어도어 루즈벨트",
+  },
+  {
+    quote: "시계를 보지 말고, 시계처럼 움직여라. 멈추지 말고 계속 가라.",
+    author: "샘 레빈슨",
+  },
+  {
+    quote: "미래를 예측하는 가장 좋은 방법은, 그 미래를 만드는 것이다.",
+    author: "피터 드러커",
+  },
+  {
+    quote: "모든 어려움의 중심에는 기회가 숨어 있다.",
+    author: "알버트 아인슈타인",
+  },
+  {
+    quote: "시도하지 않는 슛은 100% 놓치는 것이다.",
+    author: "웨인 그레츠키",
+  },
+];
+
+const quote = document.querySelector("#quote span:first-child");
+const author = document.querySelector("#quote span:last-child");
+
+const todaysQuote = quotes[Math.floor(Math.random() * quotes.length)];
+
+quote.innerText = todaysQuote.quote;
+author.innerText = todaysQuote.author;
